@@ -2,7 +2,7 @@ require "faker"
 
 class EmailsController < ApplicationController
   def index
-    puts "Controller email"
+    puts "Controller email index"
     @emails = Email.all
   end
 
@@ -20,9 +20,19 @@ class EmailsController < ApplicationController
   end
 
   def show
+    puts "Controller email show"
     @email = Email.find(params[:id])
     respond_to do |format|
       format.html{ redirect_to email_path(params[:id])}
+      format.js
+    end
+  end
+
+  def destroy
+    puts "Controller email destroy"
+    Email.find(params[:id]).destroy
+    respond_to do |format|
+      format.html{ redirect_to :index}
       format.js
     end
   end

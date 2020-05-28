@@ -9,6 +9,9 @@
                 <div class="mt-4 bg-light text-dark">
                 <%=link_to email.object,email_path(id:email.id) ,remote: true%>
                 <p class="card-subtitle mb-2 text-muted"><%=email.created_at%></p>
+                <%=link_to "Supprimer", email_path(id:email.id), method: :delete, data: { confirm: 'Supprimer definitivement ce mail ?' ,remote:true },class:"badge badge-danger delete_mail"%>
+                <br/>
+                <%=link_to "Marquer comme non lus" ,"#",remote: true%>
                 </div>
             <%}%>
         </div>
