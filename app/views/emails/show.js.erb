@@ -1,0 +1,3 @@
+
+$("#body-mail").empty();
+document.getElementById("body-mail").insertAdjacentHTML("beforeend", "<%= j render 'email', email: @email %>")
