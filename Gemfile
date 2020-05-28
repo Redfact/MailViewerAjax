@@ -38,7 +38,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 #lazy user creation
 gem 'devise'
-gem 'faker'
 #Front end gem
 gem "font-awesome-rails"
 gem 'bootstrap', '~> 4.3.1'
@@ -67,3 +66,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+gem 'table_print'
