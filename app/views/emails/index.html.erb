@@ -7,7 +7,11 @@
         <%# Div qui va lister les mails %>
         <div class="col-md-4" id="mails">
             <%@emails.each{ |email|%>
-                <div class="mt-4 bg-light text-dark " id= "<%= email.id %>" >
+                <%if(email.read == true)then%>
+                <div class="mt-4 bg-secondary text-dark " id= "<%= email.id %>" >
+                <%else%>
+                 <div class="mt-4 bg-light text-dark " id= "<%= email.id %>" >
+                <%end%>
                     <%=link_to email.object,email_path(id:email.id) ,remote: true,class:"mail-object text-dark"%>
                     <p><%=email.created_at%></p>
                     <%=link_to "Supprimer", email_path(id:email.id), method: :delete, data: { confirm: 'Supprimer definitivement ce mail ?' ,remote:true },class:"badge badge-danger delete_mail"%>
