@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Affichage des mails fonctionnel 
 
-Things you may want to cover:
+Le déployement sur heroku bug du coup , le projet n'est fonctionnel qu'en localhost.
 
-* Ruby version
+### Installation : 
+- bundle install 
 
-* System dependencies
+-rails db:create
 
-* Configuration
+-rails db:migrate
 
-* Database creation
+-rails db:seed
 
-* Database initialization
+### Autre : 
 
-* How to run the test suite
+Les mails lu s'affichent en sombre . Possibilité de les marqués en non lu .
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
