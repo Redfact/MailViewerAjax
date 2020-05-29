@@ -14,7 +14,18 @@ class EmailsController < ApplicationController
     )
     
     respond_to do |format|
-      format.html{ redirect_to :index}
+      format.html{ redirect_to emails_path}
+      format.js
+    end
+  end
+
+  def update
+    puts "Controller email upt"
+    read = params[:email][:read] 
+    @email=Email.find(params[:id])
+    @email.update(read: read)
+    respond_to do |format|
+      format.html{ redirect_to emails_path }
       format.js
     end
   end
@@ -32,7 +43,7 @@ class EmailsController < ApplicationController
     puts "Controller email destroy"
     Email.find(params[:id]).destroy
     respond_to do |format|
-      format.html{ redirect_to :index}
+      format.html{ redirect_to emails_path}
       format.js
     end
   end

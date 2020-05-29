@@ -1,0 +1,4 @@
+
+document.getElementById("<%=@email.id%>").classList.remove("bg-dark")
+document.getElementById("<%=@email.id%>").classList.add("bg-light")
+("<%= @email.update_attribute(:read, "false") %>")

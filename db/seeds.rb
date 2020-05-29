@@ -25,6 +25,6 @@ Email.destroy_all
   Email.create(
   object:Faker::Book.title,
   body:Faker::Hipster.paragraph(sentence_count: 10),
-  read: [true,false].sample
+  read: false
   )
 }

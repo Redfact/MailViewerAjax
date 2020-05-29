@@ -1,3 +1,12 @@
 
 $("#body-mail").empty();
 document.getElementById("body-mail").insertAdjacentHTML("beforeend", "<%= j render 'email', email: @email %>")
+
+
+
+console.log( document.getElementById("<%=@email.id%>"))
+document.getElementById("<%=@email.id%>").classList.remove("bg-light")
+document.getElementById("<%=@email.id%>").classList.add("bg-secondary")
+if (("<%= @email.read  %>") === "false") {
+    ("<%= @email.update_attribute(:read, "true") %>")
+}
